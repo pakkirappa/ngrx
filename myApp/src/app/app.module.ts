@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from './enviroment';
+import { AuthService } from './auth/auth.services';
 
 
 @NgModule({
@@ -22,10 +23,10 @@ import { environment } from './enviroment';
     AuthModule,
     HttpClientModule,
     ReactiveFormsModule,
-    StoreModule.forRoot([]),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
